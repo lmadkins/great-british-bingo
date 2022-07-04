@@ -19,12 +19,13 @@ load new game on render
 - crossed off but visible
 
 Check win
-- display message when win
+- display message when win, offer to play again
 - if get three in a row, horizontally or vertically, win game
 
 
 STRETCH
 - in-game instructions (tooltip on hover/click?)
+- on check win, modal or other effect instead of alert
 - different UI for desktop view
 - multiplayer options?
 - options for hosts/sandy/noel/prue/paul

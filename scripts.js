@@ -37,6 +37,8 @@ function handleSquareClick () {
 }
 
 function checkWin () {
+  // MVP: alert, ask to play again
+  // stretch: modal/effects,
   
 }
 
