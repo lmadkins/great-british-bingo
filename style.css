@@ -1,0 +1,39 @@
+/* BINGO CARD */
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 20vh);
+  grid-template-rows: repeat(3, 20vh);
+  justify-content: center;
+}
+
+.square {
+  border: 1px solid #383838;
+  border-radius: 2px;
+  font-size: 30px;
+  text-align: center;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #F4F4F4;
+}
+
+
+
+/* STYLE TO ADD WHEN A SQUARE IS MARKED */
+.marked {
+  color: red;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 600px) {
+
+  #grid-container {
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
+  }
+  .square {
+    font-size: 24px;
+  }
+}
