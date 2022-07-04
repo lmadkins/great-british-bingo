@@ -1,5 +1,5 @@
 # Welcome to the Great British Bakeoff Bingo Game!
-## Project coming soon! 
+## Project coming soon
 
 How to Play:
 - Keep the bingo card open while watching The Great British Bakeoff. Keep an eye out for when something happens matching one of your card prompts!
