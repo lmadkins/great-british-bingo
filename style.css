@@ -19,13 +19,16 @@
   background-color: #F4F4F4;
 }
 
-
-
 /* STYLE TO ADD WHEN A SQUARE IS MARKED */
 .marked {
   color: red;
 }
 
+
+
+.hidden {
+  display: none;
+}
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
 

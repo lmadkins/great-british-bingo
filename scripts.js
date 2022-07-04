@@ -1,5 +1,15 @@
 // Cached element references
-const restartBtn = document.querySelector('#restartBtn')
+
+const initGameBtn = document.querySelector('#gameStart')
+//hide entry view, load main view, render game
+const entryPageContainer = document.querySelector('#entry-page-container')
+const mainGameContainer = document.querySelector('#main-game-container')
+
+
+// const gameRestart = document.querySelector('#gameRestart')
+// ^ will use this later when adding a popup to confirm starting a new game
+
+const renderNewGame = document.querySelector('.renderGameBtn')
 const cardSquares = document.querySelectorAll('.square')
 
 // store data
@@ -27,14 +37,29 @@ function handleSquareClick () {
 }
 
 function checkWin () {
-
+  
 }
 
-function newGame () {
+function renderNew () {
+// add as parameter to newGameBtn event listener
+console.log('loaded new game')
+}
 
+function initGameView () {
+// entry view classlist add hide, main game view classlist add hide
+// class hidden 
+entryPageContainer.classList.add('hidden')
+mainGameContainer.classList.remove('hidden')
+renderNew()
 }
 
 //Attach event listeners
-restartBtn.addEventListener('click',  () => console.log('Reset button clicked!'))
+
+initGameBtn.addEventListener('click', initGameView)
+// ^ hide entry, load game, render new bingo card
+
+renderNewGame.addEventListener('click', renderNew)
+// ^ render new bingo card
 
 document.querySelectorAll('.square').forEach(cardSquares => cardSquares.addEventListener('click', handleSquareClick))
+// ^ on clicking a square, add a marker to it
