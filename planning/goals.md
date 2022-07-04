@@ -1,14 +1,17 @@
 MVP:
+Mobile and tablet first!
+
 elements/components
-- button to replay
+- welcome message at start, with instructions, button to start 
+- button to restart game (out of reach of accidental press)
 - header with name of game
-- explanation
-- message to display win
-- bingo card- 5x5 grid, free in center, B I N G O at top of each column
+- message to display if win
+- bingo card- 3x3 grid, free in center
 
 if selected/marked off maybe fade background or some other css effect slightly to indicate not an option?
 
 load new game on render
+- on click of open page
 - shuffled each time restart
 - each slot can only appear once per game
 
@@ -21,8 +24,9 @@ Check win
 
 
 STRETCH
-- mobile menu
---multiplayer
+- in-game instructions (tooltip on hover/click?)
+- different UI for desktop view
+- multiplayer options?
 - options for hosts/sandy/noel/prue/paul
 
 /////////////////////////////////////////

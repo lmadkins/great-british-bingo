@@ -2,13 +2,18 @@
 const restartBtn = document.querySelector('#restartBtn')
 const cardSquares = document.querySelectorAll('.square')
 
+// store data
+let squareOpts = []
+
+// Event handlers
+
 // initializing function 
 // rendering board with 
-function renderCard () {
+const renderCard = (someParameter) => {
   // each one is array value
   //for each?
   // inner text?
-
+  //loop through array - for each? and pick 8 at random
 }
 
 function handleSquareClick () {
@@ -21,7 +26,13 @@ function handleSquareClick () {
  this.classList.add('marked')
 }
 
-let squareOpts = []
+function checkWin () {
+
+}
+
+function newGame () {
+
+}
 
 //Attach event listeners
 restartBtn.addEventListener('click',  () => console.log('Reset button clicked!'))
