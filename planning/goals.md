@@ -61,4 +61,4 @@ Sandi mentions Dutch heritage
 Joke about Sandi's height
 Textures are wrong
 Innuendo
-Joke about paul 
+Joke about Paul 
