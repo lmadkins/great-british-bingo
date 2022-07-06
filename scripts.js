@@ -63,7 +63,7 @@ function checkWin () {
     else if (
       cardSquares[10].classList.contains('marked') && 
       cardSquares[11].classList.contains('marked') && 
-      cardSquares[12].classList.contains('marked'))  
+      cardSquares[12].classList.contains('marked')  
       && cardSquares[13].classList.contains('marked') && 
       cardSquares[14].classList.contains('marked')){
       console.log('bingo!')
@@ -158,7 +158,7 @@ function checkWin () {
     sq10.innerText = newArray[9]
     sq11.innerText = newArray[10]
     sq12.innerText = newArray[11]
-    sq13.innerText = newArray[12]
+    // sq13.innerText = newArray[12]
     sq14.innerText = newArray[13]
     sq15.innerText = newArray[14]
     sq16.innerText = newArray[15]
