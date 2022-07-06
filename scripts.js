@@ -6,7 +6,7 @@ const initGameBtn = document.querySelector('#gameStart')
 const entryPageContainer = document.querySelector('#entry-page-container')
 const mainGameContainer = document.querySelector('#main-game-container')
 
-// const sq1 = document.querySelector('#sq1')
+const sq1 = document.querySelector('#sq1')
 // const sq2 = document.querySelector('#sq2')
 // const sq3 = document.querySelector('#sq3')
 // const sq4 = document.querySelector('#sq4')
@@ -16,7 +16,7 @@ const mainGameContainer = document.querySelector('#main-game-container')
 // const sq8 = document.querySelector('#sq8')
 // const sq9 = document.querySelector('#sq9')
 
-// const gameRestart = document.querySelector('#gameRestart')
+const gameRestart = document.querySelector('#gameRestart')
 // ^ will use this later when adding a popup to confirm starting a new game
 
 const renderNewGame = document.querySelector('.renderGameBtn')
@@ -24,74 +24,84 @@ const cardSquares = document.querySelectorAll('.square')
 
 ////////////////////////////////
 // store data
-let squareOpts = ['A bake collapses/breaks', 'Baker helps another baker', "Bakers haven't heard of something before", 'Dry', 'Even layering', 'Flavors are not coming through', 'Flavors are too strong', 'Good or beautiful sponge', 'Handshake from Paul', 'Hosts wearing costumes', 'Hot day in the tent', '"I\'ve never made this before"', 'Innuendo', 'It looks a mess/It could be neater', 'It looks bad but the flavors are good', 'It looks plain, underwhelming', 'It tastes good but the textures are wrong', 'Joke about Paul', 'Overproved', "Paul question's someone's choice", 'Raw', 'Recipe from a relative', 'Rubbery', 'Soggy bottom', 'Someone makes a mistake and starts over', 'Stodgy', 'Textures are wrong', 'Two or more people have similar themes/ideas/flavors', 'Underdone or underbaked', 'Underproved', 'Uneven distribution of filling', 'Uneven layering']
+let squareOpts = ['A bake collapses/breaks', 'Baker helps another baker', "Bakers haven't heard of something before", '"Dry"', '"Even layering"', 'Flavors are not coming through', '"Flavors are too strong"', '"Good/beautiful sponge"', 'Handshake from Paul', 'Hosts wearing costumes', 'Hot day in the tent', '"I\'ve never made this before"', 'Innuendo', '"It looks a mess/It could be neater"', '"It looks bad but the flavors are good"', '"It looks plain/ underwhelming"', '"It tastes good but the textures are wrong"', 'Joke about Paul', '"Overproved"', "Paul question's someone's choice", 'Raw', 'Recipe from a relative', '"Rubbery"', '"Soggy bottom"', 'Someone makes a mistake and starts over', '"Stodgy"', '"Textures are wrong"', 'Two or more people have similar themes/ideas/flavors', '"Underbaked"', '"Underproved"', 'Uneven distribution of filling', '"Uneven layering"']
 
 //re-sorted alphabetically
 // let alphArr = squareOpts.sort((a, b) => a.localeCompare(b))
 // console.log(alphArr)
 
 ////////////////////////////////
-// Event handlers
 
-// initializing function 
-function initGameView () {
-  // entry view classlist add hide, main game view classlist add hide
-  // class hidden 
-  entryPageContainer.classList.add('hidden')
-  mainGameContainer.classList.remove('hidden')
-  renderNew()
-  }
 
-// function shuffleArray (){
-  let newArray = squareOpts.sort(() => Math.random() - 0.5)
-
-// shuffleArray()
-// console.log(shuffleArray())
-// console.log(shuffleArray(newArray[0]))
-  // rendering 
-function renderNew () {
-  // console.log(newArray[0], newArray[1], newArray[2], newArray[3], newArray[4], newArray[5], newArray[6], newArray[7], newArray[8])
-  sq1.innerText = newArray[0]
-  sq2.innerText = newArray[1]
-  sq3.innerText = newArray[2]
-  sq4.innerText = newArray[3]
-  sq5.innerText = newArray[4]
-  sq6.innerText = newArray[5]
-  sq7.innerText = newArray[6]
-  sq8.innerText = newArray[7]
-  sq9.innerText = newArray[8]
-  // add as parameter to newGameBtn event listener
-
-  }
-  renderNew()
 
 function handleSquareClick () {
-  // add overlay style to show marked off
-  // toggle class?
-  // classList.remove/add
-  // this.onclick
-  console.log('clicked')
-  // document.getElementById(myDropdown").classList.toggle("show")
- this.classList.add('marked')
+  this.classList.toggle('marked')
+
+  checkWin()
 }
 
 function checkWin () {
   //Element.matches()?
   // MVP: alert, ask to play again
   // stretch: modal/effects,
-  
+  if (cardSquares[0].classList.contains('marked') && cardSquares[1].classList.contains('marked') && cardSquares[2].classList.contains('marked')) {
+      console.log('bingo!')
+    } else if (cardSquares[3].classList.contains('marked') && cardSquares[4].classList.contains('marked') && cardSquares[5].classList.contains('marked')) {
+      console.log('bingo!')
+    } else if (cardSquares[6].classList.contains('marked') && cardSquares[7].classList.contains('marked') && cardSquares[8].classList.contains('marked')) {
+      console.log('bingo!')
+    } else if (cardSquares[0].classList.contains('marked') && cardSquares[3].classList.contains('marked') && cardSquares[6].classList.contains('marked')) {
+      console.log('bingo!')
+    } else if (cardSquares[1].classList.contains('marked') && cardSquares[4].classList.contains('marked') && cardSquares[7].classList.contains('marked')) {
+      console.log('bingo!')
+    } else if (cardSquares[2].classList.contains('marked') && cardSquares[5].classList.contains('marked') && cardSquares[8].classList.contains('marked')) {
+      console.log('bingo!')
+    }
+
+  // for (let i=0; i < card.Squares.length; i++) {
+  //   if (cardSquares[i].classList.contains('marked'))  {
+  //     console.log('bingo!')
+  //   }
+  // }
+ 
 }
-
-
 // Winning combinations:
-// sq 1 && sq 2 && sq 3
-// sq 4 && sq 5 && sq 6
-// sq 7 && sq 8 && sq 9
+// sq 0 && sq 1 && sq 2
+// sq 3 && sq 4 && sq 5
+// sq 6 && sq 7 && sq 8
+// sq 0 && sq 3 && sq 6
 // sq 1 && sq 4 && sq 7
 // sq 2 && sq 5 && sq 8
-// sq 3 && sq 6 && sq 9
 
+  // rendering 
+  function renderNew () {
 
+    for (let i = 0; i < cardSquares.length; i++) {
+      cardSquares[i].classList.remove('marked')
+    }
+
+    let newArray = squareOpts.sort(() => Math.random() - 0.5)
+  
+    sq1.innerText = newArray[0]
+    sq2.innerText = newArray[1]
+    sq3.innerText = newArray[2]
+    sq4.innerText = newArray[3]
+    // sq5.innerText = newArray[4]
+    sq6.innerText = newArray[5]
+    sq7.innerText = newArray[6]
+    sq8.innerText = newArray[7]
+    sq9.innerText = newArray[8]
+    }
+
+    // initializing function 
+function initGameView () {
+  // entry view classlist add hide, main game view classlist add hide
+  // class hidden 
+  entryPageContainer.classList.add('hidden')
+  mainGameContainer.classList.remove('hidden')
+
+  renderNew()
+  }
 
 ////////////////////////////////
 //Attach event listeners
@@ -101,6 +111,9 @@ initGameBtn.addEventListener('click', initGameView)
 
 renderNewGame.addEventListener('click', renderNew)
 // ^ render new bingo card
+
+gameRestart.addEventListener('click', renderNew)
+// ^ restart button, renders new card and removes any marked styles
 
 document.querySelectorAll('.square').forEach(cardSquares => cardSquares.addEventListener('click', handleSquareClick))
 // ^ on clicking a square, add a marker to it
