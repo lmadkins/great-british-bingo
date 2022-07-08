@@ -5,7 +5,7 @@ const initGameBtn = document.querySelector('#gameStart')
 //hide entry view, load main view, render game
 const entryPageContainer = document.querySelector('#entry-page-container')
 const mainGameContainer = document.querySelector('#main-game-container')
-
+const cardSquares = document.querySelectorAll('.square')
 // const sq1 = document.querySelector('#sq1')
 // const sq2 = document.querySelector('#sq2')
 // const sq3 = document.querySelector('#sq3')
@@ -17,10 +17,9 @@ const mainGameContainer = document.querySelector('#main-game-container')
 // const sq9 = document.querySelector('#sq9')
 
 const gameRestart = document.querySelector('#gameRestart')
-// ^ will use this later when adding a popup to confirm starting a new game
+//restart button, renders new card and removes any marked styles
 
 const renderNewGame = document.querySelector('.renderGameBtn')
-const cardSquares = document.querySelectorAll('.square')
 
 ////////////////////////////////
 // store data
@@ -32,25 +31,31 @@ let squareOpts = ['A bake collapses/breaks', 'Baker helps another baker', "Baker
 
 ////////////////////////////////
 
-
-
 function handleSquareClick () {
   this.classList.toggle('marked')
-
   checkWin()
 }
 
+// function replayPrompt () {
+
+// }
+
+
+//   // for (let i = 0; i> cardSquares.length; i++) {
+//     if (cardSquares[combination[i]].classList.contains('marked')) {
+//   console.log('bingo')
+//     }
+//   }
+// }
+//   checkWin([0,1,2,3,4])
 function checkWin () {
-  //Element.matches()?
-  // MVP: alert, ask to play again
-  // stretch: modal/effects,
   if (
     cardSquares[0].classList.contains('marked') && 
     cardSquares[1].classList.contains('marked') && 
     cardSquares[2].classList.contains('marked') && 
     cardSquares[3].classList.contains('marked') && 
     cardSquares[4].classList.contains('marked')) {
-      console.log('bingo!')
+     window.alert('Bingo!\nWould you like to play again?')
     } 
     else if (
       cardSquares[5].classList.contains('marked') && 
@@ -58,15 +63,15 @@ function checkWin () {
       cardSquares[7].classList.contains('marked') && 
       cardSquares[8].classList.contains('marked') && 
       cardSquares[9].classList.contains('marked')) {
-      console.log('bingo!')
+        window.alert('Bingo!\nWould you like to play again?')
     } 
     else if (
       cardSquares[10].classList.contains('marked') && 
       cardSquares[11].classList.contains('marked') && 
-      cardSquares[12].classList.contains('marked')  
-      && cardSquares[13].classList.contains('marked') && 
+      cardSquares[12].classList.contains('marked') && 
+      cardSquares[13].classList.contains('marked') && 
       cardSquares[14].classList.contains('marked')){
-      console.log('bingo!')
+        window.alert('Bingo!\nWould you like to play again?')
     } 
     else if (
       cardSquares[15].classList.contains('marked') && 
@@ -74,7 +79,7 @@ function checkWin () {
       cardSquares[17].classList.contains('marked') && 
       cardSquares[18].classList.contains('marked') && 
       cardSquares[19].classList.contains('marked')) {
-      console.log('bingo!')
+        window.alert('Bingo!\nWould you like to play again?')
     } 
     else if (
       cardSquares[20].classList.contains('marked') && 
@@ -82,7 +87,7 @@ function checkWin () {
       cardSquares[22].classList.contains('marked') && 
       cardSquares[23].classList.contains('marked') && 
       cardSquares[24].classList.contains('marked')) {
-        console.log('bingo!')
+        window.alert('Bingo!\nWould you like to play again?')
       } 
       else if (
         cardSquares[0].classList.contains('marked') && 
@@ -90,7 +95,7 @@ function checkWin () {
         cardSquares[10].classList.contains('marked') && 
         cardSquares[15].classList.contains('marked') && 
         cardSquares[20].classList.contains('marked')) {
-          console.log('bingo!')
+          window.alert('Bingo!\nWould you like to play again?')
         } 
         else if (
           cardSquares[1].classList.contains('marked') && 
@@ -98,7 +103,7 @@ function checkWin () {
           cardSquares[11].classList.contains('marked') && 
           cardSquares[16].classList.contains('marked') && 
           cardSquares[21].classList.contains('marked')) {
-            console.log('bingo!')
+            window.alert('Bingo!\nWould you like to play again?')
           } 
           else if (
             cardSquares[2].classList.contains('marked') && 
@@ -106,7 +111,7 @@ function checkWin () {
             cardSquares[12].classList.contains('marked') && 
             cardSquares[17].classList.contains('marked') && 
             cardSquares[22].classList.contains('marked')) {
-              console.log('bingo!')
+              window.alert('Bingo!\nWould you like to play again?')
             } 
             else if (
               cardSquares[3].classList.contains('marked') && 
@@ -114,7 +119,7 @@ function checkWin () {
               cardSquares[13].classList.contains('marked') && 
               cardSquares[18].classList.contains('marked') && 
               cardSquares[23].classList.contains('marked')) {
-                console.log('bingo!')
+                window.alert('Bingo!\nWould you like to play again?')
               } 
               else if (
                 cardSquares[4].classList.contains('marked') && 
@@ -122,9 +127,11 @@ function checkWin () {
                 cardSquares[14].classList.contains('marked') && 
                 cardSquares[19].classList.contains('marked') && 
                 cardSquares[24].classList.contains('marked')) {
-                  console.log('bingo!')
+                  window.alert('Bingo!\nWould you like to play again?')
                 } 
-}
+              }
+
+
 // Winning combinations:
 // sq0 && sq1 && sq2 && sq3 && sq4
 // sq5 && sq6 && sq7 && sq8 && sq9
@@ -139,13 +146,16 @@ function checkWin () {
 
   // rendering 
   function renderNew () {
-
     for (let i = 0; i < cardSquares.length; i++) {
       cardSquares[i].classList.remove('marked')
     }
 
     let newArray = squareOpts.sort(() => Math.random() - 0.5)
   
+    // newArray.forEach()
+    // const fillSquares = ((itemName, index) => )
+    //cardSquares.forEach()
+  // forEach?
     sq1.innerText = newArray[0]
     sq2.innerText = newArray[1]
     sq3.innerText = newArray[2]
@@ -188,12 +198,9 @@ function initGameView () {
 
 initGameBtn.addEventListener('click', initGameView)
 // ^ hide entry, load game, render new bingo card
-
 renderNewGame.addEventListener('click', renderNew)
 // ^ render new bingo card
-
 gameRestart.addEventListener('click', renderNew)
 // ^ restart button, renders new card and removes any marked styles
-
 document.querySelectorAll('.square').forEach(cardSquares => cardSquares.addEventListener('click', handleSquareClick))
 // ^ on clicking a square, add a marker to it

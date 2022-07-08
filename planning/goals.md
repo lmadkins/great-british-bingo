@@ -22,7 +22,10 @@ Check win
 - display message when win, offer to play again
 - if get three in a row, horizontally or vertically, win game
 
-
+  //Element.matches()?
+  // MVP: alert, ask to play again
+  // stretch: modal/effects,
+  
 STRETCH
 - in-game instructions (tooltip on hover/click?)
 - on check win, modal or other effect instead of alert
