@@ -17,24 +17,20 @@ function handleSquareClick () {
   checkWin()
 }
 
-//   // for (let i = 0; i> cardSquares.length; i++) {
-//     if (cardSquares[combination[i]].classList.contains('marked')) {
-//   console.log('bingo')
-//     }
-//   }
-// }
-//   checkWin([0,1,2,3,4])
-// function checkWin () {
-//   if (
-//     cardSquares[0].classList.contains('marked') && 
-//     cardSquares[1].classList.contains('marked') && 
-//     cardSquares[2].classList.contains('marked') && 
-//     cardSquares[3].classList.contains('marked') && 
-//     cardSquares[4].classList.contains('marked')) {
-//      window.alert('Bingo!\nWould you like to play again?')
 
+// const winningCombos = [
+//   [0, 1, 2, 3, 4],
+//   [5, 6, 7, 8, 9],
+//   [10, 11, 12, 13, 14],
+//   [15, 16, 17, 18, 19],
+//   [20, 21, 22, 23, 24],
 
-
+//   [0, 5, 10, 15, 20],
+//   [1, 6, 11, 16, 21],
+//   [2, 7, 12, 17, 22],
+//   [3, 8, 13, 18, 23,
+//   [4, 9, 14, 19, 24]]
+// ]
 // Winning combinations:
 // sq0 && sq1 && sq2 && sq3 && sq4
 // sq5 && sq6 && sq7 && sq8 && sq9
@@ -47,6 +43,27 @@ function handleSquareClick () {
 // sq3 && sq8 && sq13 && sq18 && sq23
 // sq4 && sq9 && sq14 && sq19 && sq24
 
+// function checkWin () {
+//   const checkCombo = () => {
+//     for (let i=0; i < cardSquares.length; i++) {
+//       if (cardSquares[i].classList.contains('marked')) {
+//         console.log('bye')
+//       } else {
+//         return true
+//         console.log('hi')
+//         }
+//     } 
+//   }
+// }
+//   if (
+//     cardSquares[0].classList.contains('marked') && 
+//     cardSquares[1].classList.contains('marked') && 
+//     cardSquares[2].classList.contains('marked') && 
+//     cardSquares[3].classList.contains('marked') && 
+//     cardSquares[4].classList.contains('marked')) {
+//      window.alert('Bingo!\nWould you like to play again?')
+
+
 // rendering new bingo card
 function renderNew () {
   let randomOptions = squareOptions.sort(() => Math.random() - 0.5)
@@ -58,37 +75,6 @@ function renderNew () {
     cardSquares[i].classList.remove('marked')
   }
 }
-  
-    // newArray.forEach()
-    // const fillSquares = ((itemName, index) => )
-    //cardSquares.forEach()
-  // forEach?
-    // sq1.innerText = newArray[0]
-    // sq2.innerText = newArray[1]
-    // sq3.innerText = newArray[2]
-    // sq4.innerText = newArray[3]
-    // sq5.innerText = newArray[4]
-    // sq6.innerText = newArray[5]
-    // sq7.innerText = newArray[6]
-    // sq8.innerText = newArray[7]
-    // sq9.innerText = newArray[8]
-    // sq10.innerText = newArray[9]
-    // sq11.innerText = newArray[10]
-    // sq12.innerText = newArray[11]
-    // // sq13.innerText = newArray[12]
-    // sq14.innerText = newArray[13]
-    // sq15.innerText = newArray[14]
-    // sq16.innerText = newArray[15]
-    // sq17.innerText = newArray[16]
-    // sq18.innerText = newArray[17]
-    // sq19.innerText = newArray[18]
-    // sq20.innerText = newArray[19]
-    // sq21.innerText = newArray[20]
-    // sq22.innerText = newArray[21]
-    // sq23.innerText = newArray[22]
-    // sq24.innerText = newArray[23]
-    // sq25.innerText = newArray[24]
-    
 
 // initializing function 
 function initGameView () {
