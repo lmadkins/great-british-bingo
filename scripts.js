@@ -1,45 +1,16 @@
-////////////////////////////////
-// Cached element references
-
-const initGameBtn = document.querySelector('#gameStart')
-//hide entry view, load main view, render game
-const entryPageContainer = document.querySelector('#entry-page-container')
-const mainGameContainer = document.querySelector('#main-game-container')
 const cardSquares = document.querySelectorAll('.square')
-// const sq1 = document.querySelector('#sq1')
-// const sq2 = document.querySelector('#sq2')
-// const sq3 = document.querySelector('#sq3')
-// const sq4 = document.querySelector('#sq4')
-// const sq5 = document.querySelector('#sq5')
-// const sq6 = document.querySelector('#sq6')
-// const sq7 = document.querySelector('#sq7')
-// const sq8 = document.querySelector('#sq8')
-// const sq9 = document.querySelector('#sq9')
-
-const gameRestart = document.querySelector('#gameRestart')
-//restart button, renders new card and removes any marked styles
-
-const renderNewGame = document.querySelector('.renderGameBtn')
 
 ////////////////////////////////
 // store data
-let squareOpts = ['A bake collapses/breaks', 'Baker helps another baker', "Bakers haven't heard of something before", '"Dry"', '"Even layering"', 'Flavors are not coming through', '"Flavors are too strong"', '"Good/beautiful sponge"', 'Handshake from Paul', 'Hosts wearing costumes', 'Hot day in the tent', '"I\'ve never made this before"', 'Innuendo', '"It looks a mess/It could be neater"', '"It looks bad but the flavors are good"', '"It looks plain/ underwhelming"', '"It tastes good but the textures are wrong"', 'Joke about Paul', '"Overproved"', "Paul question's someone's choice", 'Raw', 'Recipe from a relative', '"Rubbery"', '"Soggy bottom"', 'Someone makes a mistake and starts over', '"Stodgy"', '"Textures are wrong"', 'Two or more people have similar themes/ideas/flavors', '"Underbaked"', '"Underproved"', 'Uneven distribution of filling', '"Uneven layering"']
+let squareOptions = ['A bake collapses/breaks', 'Baker helps another baker', "Bakers haven't heard of something before", '"Dry"', '"Even layering"', 'Flavors are not coming through', '"Flavors are too strong"', '"Good/beautiful sponge"', 'Handshake from Paul', 'Hosts wearing costumes', 'Hot day in the tent', '"I\'ve never made this before"', 'Innuendo', '"It looks a mess/It could be neater"', '"It looks bad but the flavors are good"', '"It looks plain/ underwhelming"', '"It tastes good but the textures are wrong"', 'Joke about Paul', '"Overproved"', "Paul question's someone's choice", 'Raw', 'Recipe from a relative', '"Rubbery"', '"Soggy bottom"', 'Someone makes a mistake and starts over', '"Stodgy"', '"Textures are wrong"', 'Two or more people have similar themes/ideas/flavors', '"Underbaked"', '"Underproved"', 'Uneven distribution of filling', '"Uneven layering"']
 
-//if want to re-sort items in array alphabetically:
-// let alphArr = squareOpts.sort((a, b) => a.localeCompare(b))
-// console.log(alphArr)
 
 ////////////////////////////////
 
-function handleSquareClick () {
-  this.classList.toggle('marked')
-  checkWin()
+function handleSquareClick (e) {
+  e.target.classList.toggle('marked')
+  checkBingo()
 }
-
-// function replayPrompt () {
-
-// }
-
 
 //   // for (let i = 0; i> cardSquares.length; i++) {
 //     if (cardSquares[combination[i]].classList.contains('marked')) {
@@ -48,88 +19,41 @@ function handleSquareClick () {
 //   }
 // }
 //   checkWin([0,1,2,3,4])
-function checkWin () {
-  if (
-    cardSquares[0].classList.contains('marked') && 
-    cardSquares[1].classList.contains('marked') && 
-    cardSquares[2].classList.contains('marked') && 
-    cardSquares[3].classList.contains('marked') && 
-    cardSquares[4].classList.contains('marked')) {
-     window.alert('Bingo!\nWould you like to play again?')
-    } 
-    else if (
-      cardSquares[5].classList.contains('marked') && 
-      cardSquares[6].classList.contains('marked') && 
-      cardSquares[7].classList.contains('marked') && 
-      cardSquares[8].classList.contains('marked') && 
-      cardSquares[9].classList.contains('marked')) {
-        window.alert('Bingo!\nWould you like to play again?')
-    } 
-    else if (
-      cardSquares[10].classList.contains('marked') && 
-      cardSquares[11].classList.contains('marked') && 
-      cardSquares[12].classList.contains('marked') && 
-      cardSquares[13].classList.contains('marked') && 
-      cardSquares[14].classList.contains('marked')){
-        window.alert('Bingo!\nWould you like to play again?')
-    } 
-    else if (
-      cardSquares[15].classList.contains('marked') && 
-      cardSquares[16].classList.contains('marked') && 
-      cardSquares[17].classList.contains('marked') && 
-      cardSquares[18].classList.contains('marked') && 
-      cardSquares[19].classList.contains('marked')) {
-        window.alert('Bingo!\nWould you like to play again?')
-    } 
-    else if (
-      cardSquares[20].classList.contains('marked') && 
-      cardSquares[21].classList.contains('marked') && 
-      cardSquares[22].classList.contains('marked') && 
-      cardSquares[23].classList.contains('marked') && 
-      cardSquares[24].classList.contains('marked')) {
-        window.alert('Bingo!\nWould you like to play again?')
-      } 
-      else if (
-        cardSquares[0].classList.contains('marked') && 
-        cardSquares[5].classList.contains('marked') && 
-        cardSquares[10].classList.contains('marked') && 
-        cardSquares[15].classList.contains('marked') && 
-        cardSquares[20].classList.contains('marked')) {
-          window.alert('Bingo!\nWould you like to play again?')
-        } 
-        else if (
-          cardSquares[1].classList.contains('marked') && 
-          cardSquares[6].classList.contains('marked') && 
-          cardSquares[11].classList.contains('marked') && 
-          cardSquares[16].classList.contains('marked') && 
-          cardSquares[21].classList.contains('marked')) {
-            window.alert('Bingo!\nWould you like to play again?')
-          } 
-          else if (
-            cardSquares[2].classList.contains('marked') && 
-            cardSquares[7].classList.contains('marked') && 
-            cardSquares[12].classList.contains('marked') && 
-            cardSquares[17].classList.contains('marked') && 
-            cardSquares[22].classList.contains('marked')) {
-              window.alert('Bingo!\nWould you like to play again?')
-            } 
-            else if (
-              cardSquares[3].classList.contains('marked') && 
-              cardSquares[8].classList.contains('marked') && 
-              cardSquares[13].classList.contains('marked') && 
-              cardSquares[18].classList.contains('marked') && 
-              cardSquares[23].classList.contains('marked')) {
-                window.alert('Bingo!\nWould you like to play again?')
-              } 
-              else if (
-                cardSquares[4].classList.contains('marked') && 
-                cardSquares[9].classList.contains('marked') && 
-                cardSquares[14].classList.contains('marked') && 
-                cardSquares[19].classList.contains('marked') && 
-                cardSquares[24].classList.contains('marked')) {
-                  window.alert('Bingo!\nWould you like to play again?')
-                } 
-              }
+function checkBingo () {
+    const verifyCombo = (combo) => {
+        for (const sqIndex of combo) {
+            if (!cardSquares[sqIndex].classList.contains('marked')) {
+                return false
+            }
+        }
+
+        return true
+    };
+    const bingoWinningCombos = [
+        [0, 1, 2, 3, 4],
+        [5, 6, 7, 8, 9],
+        [10, 11, 12, 13, 15],
+        [15, 16, 17, 18, 19],
+        [20, 21, 22, 23, 24],
+        [0, 5, 10, 15, 20],
+        [1, 6, 11, 16, 21],
+        [2, 7, 12, 17, 22],
+        [3, 8, 13, 18, 23],
+        [4, 9, 14, 19, 24]
+    ];
+
+    const winners = bingoWinningCombos.filter(verifyCombo)
+
+    if (winners.length > 0) {
+        alert(`
+            Bingo! You won with the following combinations:
+            
+            ${winners.map(v => v.toString()).join('\n    ')}
+            
+            Would you like to play again?
+        `)
+    }
+}
 
 
 // Winning combinations:
@@ -145,62 +69,35 @@ function checkWin () {
 // sq4 && sq9 && sq14 && sq19 && sq24
 
   // rendering 
-  function renderNew () {
-    for (let i = 0; i < cardSquares.length; i++) {
-      cardSquares[i].classList.remove('marked')
-    }
+function renderNew () {
+    let randomOptions = squareOptions.sort(() => Math.random() - 0.5)
 
-    let newArray = squareOpts.sort(() => Math.random() - 0.5)
-  
-    // newArray.forEach()
-    // const fillSquares = ((itemName, index) => )
-    //cardSquares.forEach()
-  // forEach?
-    sq1.innerText = newArray[0]
-    sq2.innerText = newArray[1]
-    sq3.innerText = newArray[2]
-    sq4.innerText = newArray[3]
-    sq5.innerText = newArray[4]
-    sq6.innerText = newArray[5]
-    sq7.innerText = newArray[6]
-    sq8.innerText = newArray[7]
-    sq9.innerText = newArray[8]
-    sq10.innerText = newArray[9]
-    sq11.innerText = newArray[10]
-    sq12.innerText = newArray[11]
-    // sq13.innerText = newArray[12]
-    sq14.innerText = newArray[13]
-    sq15.innerText = newArray[14]
-    sq16.innerText = newArray[15]
-    sq17.innerText = newArray[16]
-    sq18.innerText = newArray[17]
-    sq19.innerText = newArray[18]
-    sq20.innerText = newArray[19]
-    sq21.innerText = newArray[20]
-    sq22.innerText = newArray[21]
-    sq23.innerText = newArray[22]
-    sq24.innerText = newArray[23]
-    sq25.innerText = newArray[24]
-    }
+  cardSquares.forEach((e,i) => {
+      if(!e.classList.contains('free')){
+          e.innerText = randomOptions[i]
+          e.classList.remove('marked')
+      }
+  })
+}
 
     // initializing function 
 function initGameView () {
   // entry view classlist add hide, main game view classlist add hide
-  // class hidden 
-  entryPageContainer.classList.add('hidden')
-  mainGameContainer.classList.remove('hidden')
+  // class hidden
+  document.querySelector('#entry-page-container').classList.add('hidden')
+  document.querySelector('#main-game-container').classList.remove('hidden')
 
   renderNew()
-  }
+}
 
 ////////////////////////////////
 //Attach event listeners
 
-initGameBtn.addEventListener('click', initGameView)
+document.querySelector('#gameStart').addEventListener('click', initGameView)
 // ^ hide entry, load game, render new bingo card
-renderNewGame.addEventListener('click', renderNew)
+document.querySelector('.renderGameBtn').addEventListener('click', renderNew)
 // ^ render new bingo card
-gameRestart.addEventListener('click', renderNew)
+document.querySelector('#gameRestart').addEventListener('click', renderNew)
 // ^ restart button, renders new card and removes any marked styles
-document.querySelectorAll('.square').forEach(cardSquares => cardSquares.addEventListener('click', handleSquareClick))
+document.querySelectorAll('.square').forEach((e) => {e.addEventListener('click', handleSquareClick)})
 // ^ on clicking a square, add a marker to it
