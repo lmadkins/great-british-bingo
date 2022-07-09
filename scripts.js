@@ -11,26 +11,41 @@ let squareOptions = ['A bake collapses/breaks', 'Baker helps another baker', "Ba
 // console.log(alphArr)
 
 ////////////////////////////////
-
-function handleSquareClick () {
-  this.classList.toggle('marked')
-  checkWin()
+function handleSquareClick (e) {
+  e.target.classList.toggle('marked')
+  checkBingo()
 }
 
+function checkBingo () {
+  const verifyCombo = (combo) => {
+      for (const i of combo) {
+          if (!cardSquares[i].classList.contains('marked')) {
+              return false
+          }
+      }
+      return true
+  }
 
-// const winningCombos = [
-//   [0, 1, 2, 3, 4],
-//   [5, 6, 7, 8, 9],
-//   [10, 11, 12, 13, 14],
-//   [15, 16, 17, 18, 19],
-//   [20, 21, 22, 23, 24],
+  const bingoWinningCombos = [
+      [0, 1, 2, 3, 4],
+      [5, 6, 7, 8, 9],
+      [10, 11, 12, 13, 15],
+      [15, 16, 17, 18, 19],
+      [20, 21, 22, 23, 24],
+      [0, 5, 10, 15, 20],
+      [1, 6, 11, 16, 21],
+      [2, 7, 12, 17, 22],
+      [3, 8, 13, 18, 23],
+      [4, 9, 14, 19, 24]
+  ]
 
-//   [0, 5, 10, 15, 20],
-//   [1, 6, 11, 16, 21],
-//   [2, 7, 12, 17, 22],
-//   [3, 8, 13, 18, 23,
-//   [4, 9, 14, 19, 24]]
-// ]
+  const winners = bingoWinningCombos.filter(verifyCombo)
+
+  if (winners.length > 0) {
+      alert('Bingo! Would you like to play again?')
+  }
+}
+
 // Winning combinations:
 // sq0 && sq1 && sq2 && sq3 && sq4
 // sq5 && sq6 && sq7 && sq8 && sq9
@@ -42,27 +57,6 @@ function handleSquareClick () {
 // sq2 && sq7 && sq12 && sq17 && sq22
 // sq3 && sq8 && sq13 && sq18 && sq23
 // sq4 && sq9 && sq14 && sq19 && sq24
-
-// function checkWin () {
-//   const checkCombo = () => {
-//     for (let i=0; i < cardSquares.length; i++) {
-//       if (cardSquares[i].classList.contains('marked')) {
-//         console.log('bye')
-//       } else {
-//         return true
-//         console.log('hi')
-//         }
-//     } 
-//   }
-// }
-//   if (
-//     cardSquares[0].classList.contains('marked') && 
-//     cardSquares[1].classList.contains('marked') && 
-//     cardSquares[2].classList.contains('marked') && 
-//     cardSquares[3].classList.contains('marked') && 
-//     cardSquares[4].classList.contains('marked')) {
-//      window.alert('Bingo!\nWould you like to play again?')
-
 
 // rendering new bingo card
 function renderNew () {
