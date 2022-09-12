@@ -6,7 +6,7 @@ elements/components
 - button to restart game (out of reach of accidental press)
 - header with name of game
 - message to display if win
-- bingo card- 3x3 grid, free in center
+- bingo card- 3x3 grid?, free in center
 
 if selected/marked off maybe fade background or some other css effect slightly to indicate not an option?
 
